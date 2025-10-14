@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The History of Language AI — v9</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg1:#0b1220;--bg2:#0f1b2e;--bg3:#111827;--bgbase:#0b0f16;--text:#e8eef6;--muted:#a8b3c7;--accent:#7dd3fc;--accent2:#fca5a5;--accent3:#c4b5fd;--accent4:#86efac}
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:#0b0f16;color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+  body{background:radial-gradient(1200px 800px at 20% 20%,var(--bg1),transparent 60%),radial-gradient(1000px 700px at 90% 10%,var(--bg2),transparent 55%),radial-gradient(900px 700px at 70% 90%,var(--bg3),transparent 60%),var(--bgbase);background-attachment:fixed;overflow:hidden;animation:drift 24s ease-in-out infinite alternate;}
+  @keyframes drift{0%{background-position:20% 20%,90% 10%,70% 90%,0 0}100%{background-position:25% 25%,86% 14%,68% 86%,0 0}}
+  .deck{height:100%;width:100%;position:relative;overflow:hidden;}
+  .slide{position:absolute;inset:0;padding:6vh 7vw;display:flex;flex-direction:column;justify-content:flex-start;gap:1.1rem;transition:transform .45s ease,opacity .45s ease;opacity:0;transform:translateX(40px);pointer-events:none;overflow:auto;}
+  .slide.active{opacity:1;transform:translateX(0);pointer-events:auto;}
+  h1,h2{margin:0;line-height:1.1}
+  h1{font-size:clamp(28px,5.6vw,58px);text-shadow:0 6px 32px rgba(0,0,0,.5)}
+  h2{font-size:clamp(20px,3.2vw,32px);color:var(--accent)}
+  p{font-size:clamp(15px,2vw,21px);margin:0;max-width:95ch}
+  .muted{color:var(--muted)}
+  .row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .col{display:flex;flex-direction:column;gap:.6rem}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem 1.2rem}
+  .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .icon{width:60px;height:60px;border-radius:12px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));font-size:28px}
+  .kbd{display:inline-block;padding:.18rem .48rem;border:1px solid rgba(255,255,255,.2);border-radius:6px;background:#0b0d11}
+  .progress{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,.06)}
+  .bar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent3));transition:width .3s.ease}
+  .counter{position:absolute;bottom:10px;right:12px;font-size:12px;color:var(--muted);background:rgba(0,0,0,.25);padding:.28rem .5rem;border-radius:8px;border:1px solid rgba(255,255,255,.1)}
+  .nav{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:.6rem;background:rgba(0,0,0,.25);padding:.3rem .5rem;border-radius:12px;border:1px solid rgba(255,255,255,.12);backdrop-filter:saturate(130%) blur(2px)}
+  .nav button{appearance:none;border:none;padding:.45rem .7rem;border-radius:8px;color:var(--text);background:rgba(255,255,255,.06);cursor:pointer;font-family:inherit}
+  .svg-wrap{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1rem}
+  svg{width:100%;height:auto}
+  .term{border-bottom:1px dashed rgba(255,255,255,.35);cursor:help;position:relative}
+  .popover{position:absolute;z-index:10;max-width:54ch;background:rgba(10,13,20,.96);color:var(--text);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.9rem 1rem;line-height:1.35;box-shadow:0 10px 30px rgba(0,0,0,.45);transform:translateY(-6px);opacity:0;pointer-events:none;transition:opacity .15s ease,transform .15s ease}
+  .popover.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+  .ticker{position:relative;height:8px;background:rgba(255,255,255,.08);border-radius:6px;overflow:hidden;margin:.6rem 0 1rem 0}
+  .tickbar{position:absolute;left:0;top:0;bottom:0;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));animation:tick 14s linear infinite}
+  @keyframes tick{0%{width:0%}100%{width:100%}}
+  .fs{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15);color:var(--text);padding:.35rem .6rem;border-radius:8px;cursor:pointer}
+  .tip{position:absolute;top:10px;right:12px;color:var(--muted);font-size:.82em}
+  @media (max-width:640px){.tip{display:none}}
+  @media print{body{animation:none!important;background-attachment:initial}.deck{height:auto}.slide{position:relative;opacity:1!important;transform:none!important;page-break-after:always;padding:3rem 2rem}.progress,.nav,.fs,.tip{display:none!important}}
+</style>
+</head>
+<body>
+<button class="fs" id="fsBtn" title="Full screen">⤢ Fullscreen</button>
+<div class="tip">Use <span class="kbd">←</span><span class="kbd">→</span> or click/tap to navigate</div>
+<div class="deck" id="deck" aria-live="polite">
+  <div class="counter" id="counter">1 / 4</div>
+  <section class="slide active" data-slide="1">
+    <h1>The History of Language AI</h1>
+    <div class="col">
+      <div class="card">
+        <h2>What is <span class="term" tabindex="0" data-definition="Artificial Intelligence (AI): the ability of a computer system or machine to perform tasks that would normally require human intelligence, such as learning, reasoning, problem‑solving, perception, and decision‑making.">Artificial Intelligence</span>?</h2>
+        <p>Artificial intelligence (AI) is the ability of a computer system or machine to perform tasks that would normally require human intelligence, such as learning, reasoning, problem‑solving, perception, and decision‑making.</p>
+      </div>
+      <div class="card">
+        <h2>What is <span class="term" tabindex="0" data-definition="Language AI: a field of Artificial Intelligence dedicated to enabling computers to understand, interpret, and generate human language in a way that is both meaningful and useful.">Language AI</span>?</h2>
+        <p>Language AI is a field of Artificial Intelligence dedicated to enabling computers to understand, interpret, and generate human language in a way that is both meaningful and useful.</p>
+      </div>
+      <div class="row">
+        <div class="card" style="flex:1;min-width:260px;">
+          <div class="row" style="align-items:center;gap:.8rem">
+            <div class="icon">💬</div>
+            <div><strong>ChatGPT launched publicly (Nov 2022)</strong><br/><span class="muted">~1 million users in 5 days.</span></div>
+          </div>
+        </div>
+        <div class="card" style="flex:1;min-width:260px;">
+          <div class="row" style="align-items:center;gap:.8rem">
+            <div class="icon">📈</div>
+            <div class="muted">Language AI jumped from research to daily tools.</div>
+          </div>
+        </div>
+      </div>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 1200 200">
+          <defs><style>.axis{stroke:#94a3b8;stroke-width:2}.label{fill:#cbd5e1;font:14px Poppins,sans-serif}.bubble{filter: drop-shadow(0 6px 16px rgba(0,0,0,.35));}</style></defs>
+          <line x1="80" y1="150" x2="1120" y2="150" class="axis"/>
+          <g class="label"><text x="120" y="175">2000s</text><text x="420" y="175">2013</text><text x="690" y="175">2017</text><text x="1000" y="175">2020s</text></g>
+          <g class="bubble"><circle cx="180" cy="100" r="36" fill="rgba(148,163,184,.25)" stroke="#94a3b8"/><text x="180" y="105" text-anchor="middle" fill="#e5e7eb" font-size="13">Bag‑of‑Words</text></g>
+          <g class="bubble"><circle cx="480" cy="90" r="36" fill="rgba(125,211,252,.22)" stroke="#7dd3fc"/><text x="480" y="95" text-anchor="middle" fill="#e5e7eb" font-size="13">word2vec</text></g>
+          <g class="bubble"><circle cx="740" cy="105" r="36" fill="rgba(253,186,116,.22)" stroke="#fdba74"/><text x="740" y="110" text-anchor="middle" fill="#e5e7eb" font-size="13">Attention (2017)</text></g>
+          <g class="bubble"><rect x="900" y="80" width="170" height="40" rx="10" fill="rgba(252,165,165,.22)" stroke="#fca5a5"/><text x="985" y="105" text-anchor="middle" fill="#e5e7eb" font-size="13">Transformers → LLMs</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide="2">
+    <h1>How Language AI Evolved</h1>
+    <div class="row card">
+      <div class="icon" aria-hidden="true">🧺</div>
+      <div style="flex:1">
+        <h2>Bag‑of‑Words — <em>Counting</em></h2>
+        <p><strong>Definition:</strong> Represent a sentence by counting how many times each word appears; order and meaning are ignored.</p>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 880 220">
+            <defs><style>.hdr{fill:#f1f5f9}.grid{stroke:#94a3b8;stroke-dasharray:4 6}.num{fill:#86efac;font:bold 14px Poppins, sans-serif}.word{fill:#fca5a5;font:14px Poppins, sans-serif}</style></defs>
+            <rect x="20" y="40" width="280" height="120" rx="16" fill="none" stroke="#94a3b8"/>
+            <text x="40" y="70" class="hdr">['small dog',</text><text x="40" y="94" class="hdr">'cute cute cat',</text><text x="40" y="118" class="hdr">'cute dog']</text>
+            <line x1="310" y1="100" x2="360" y2="100" stroke="#7dd3fc" stroke-width="2" marker-end="url(#arr)"/>
+            <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#7dd3fc"/></marker></defs>
+            <rect x="380" y="30" width="470" height="160" rx="16" fill="none" stroke="#94a3b8"/>
+            <text x="440" y="58" class="word">cat</text><text x="520" y="58" class="word">cute</text><text x="600" y="58" class="word">dog</text><text x="680" y="58" class="word">small</text>
+            <line x1="420" y1="70" x2="420" y2="170" class="grid"/><line x1="500" y1="70" x2="500" y2="170" class="grid"/><line x1="580" y1="70" x2="580" y2="170" class="grid"/><line x1="660" y1="70" x2="660" y2="170" class="grid"/><line x1="740" y1="70" x2="740" y2="170" class="grid"/>
+            <text x="392" y="92" class="hdr">1</text><text x="392" y="122" class="hdr">2</text><text x="392" y="152" class="hdr">3</text>
+            <text x="440" y="92" class="num">0</text><text x="520" y="92" class="num">0</text><text x="600" y="92" class="num">1</text><text x="680" y="92" class="num">1</text>
+            <text x="440" y="122" class="num">1</text><text x="520" y="122" class="num">2</text><text x="600" y="122" class="num">0</text><text x="680" y="122" class="num">0</text>
+            <text x="440" y="152" class="num">0</text><text x="520" y="152" class="num">1</text><text x="600" y="152" class="num">1</text><text x="680" y="152" class="num">0</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="row card">
+      <div class="icon" aria-hidden="true">🗺️</div>
+      <div style="flex:1">
+        <h2>word2vec (2013) — <em>Meaning</em></h2>
+        <p><strong>Definition:</strong> Convert words into numerical vectors so that words used in similar ways are close together in space.</p>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 880 220">
+            <defs><style>.pt{fill:rgba(196,181,253,.35);stroke:#c4b5fd}.arrow{stroke:#7dd3fc;stroke-width:2;marker-end:url(#arrow)}</style>
+              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7dd3fc"/></marker>
+            </defs>
+            <text x="20" y="36" fill="#e5e7eb" font-family="Poppins" font-size="16">dog bites man</text>
+            <line x1="160" y1="30" x2="260" y2="30" class="arrow"/>
+            <rect x="300" y="60" width="520" height="120" rx="12" fill="#0f172a" stroke="#334155"/>
+            <circle class="pt" cx="360" cy="150" r="6"/><text x="372" y="152" fill="#e5e7eb" font-size="12">dog</text>
+            <circle class="pt" cx="410" cy="110" r="6"/><text x="422" y="112" fill="#e5e7eb" font-size="12">bites</text>
+            <circle class="pt" cx="470" cy="140" r="6"/><text x="482" y="142" fill="#e5e7eb" font-size="12">man</text>
+            <circle class="pt" cx="650" cy="90" r="6"/><text x="662" y="92" fill="#e5e7eb" font-size="12">cat</text>
+            <circle class="pt" cx="700" cy="120" r="6"/><text x="712" y="122" fill="#e5e7eb" font-size="12">scratches</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="row card">
+      <div class="icon" aria-hidden="true">🔦</div>
+      <div style="flex:1">
+        <h2>Attention (2017) — <em>Context</em></h2>
+        <p><strong>Definition:</strong> Attention mechanism is how an LLM decides which words in a sentence are most important to fully understand the current word it is processing, allowing it to accurately grasp context and meaning. <span class="muted">(Paper: <em>“Attention Is All You Need”</em>, 2017)</span></p>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 880 220">
+            <defs><style>.word{fill:#e5e7eb;font:22px Poppins,sans-serif}.ray{stroke:#f59e0b;stroke-width:2}</style></defs>
+            <text class="word" x="20" y="70">The animal didn’t cross the street because</text>
+            <rect x="20" y="82" width="26" height="30" fill="#f59e0b" rx="4"/>
+            <text class="word" x="22" y="105" fill="#111827">it</text>
+            <text class="word" x="58" y="105">was too wide.</text>
+            <line x1="33" y1="97" x2="220" y2="82" class="ray"/>
+            <line x1="33" y1="97" x2="360" y2="65" class="ray"/>
+            <line x1="33" y1="97" x2="540" y2="98" class="ray"/>
+            <line x1="33" y1="97" x2="660" y2="98" class="ray"/>
+            <line x1="33" y1="97" x2="720" y2="98" class="ray"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide="3">
+    <h1>From Counting → Meaning → Context</h1>
+    <div class="grid">
+      <div class="card"><h2>Bag‑of‑Words</h2><p>Counts words to describe text. Fast and simple, but ignores order and meaning.</p></div>
+      <div class="card"><h2>word2vec</h2><p>Maps words to vectors capturing meaning. Similar words cluster. Still weak on long‑range context.</p></div>
+      <div class="card"><h2>Attention → Transformers</h2><p>Focus on the most relevant words and relationships — the foundation of LLMs like GPT and ChatGPT.</p></div>
+    </div>
+    <div class="svg-wrap" style="margin-top:.6rem">
+      <svg viewBox="0 0 1200 220"><defs><style>.axis{stroke:#94a3b8;stroke-width:2}.label{fill:#cbd5e1;font:14px Poppins,sans-serif}.phase{filter: drop-shadow(0 6px 16px rgba(0,0,0,.35));}</style></defs>
+        <line x1="80" y1="170" x2="1120" y2="170" class="axis"/>
+        <g class="label"><text x="120" y="195">2000s</text><text x="420" y="195">2013</text><text x="690" y="195">2017</text><text x="1000" y="195">2020s</text></g>
+        <g class="phase"><circle cx="180" cy="120" r="36" fill="rgba(148,163,184,.25)" stroke="#94a3b8"/><text x="180" y="125" text-anchor="middle" fill="#e5e7eb" font-size="13">BoW</text></g>
+        <g class="phase"><circle cx="480" cy="110" r="36" fill="rgba(125,211,252,.22)" stroke="#7dd3fc"/><text x="480" y="115" text-anchor="middle" fill="#e5e7eb" font-size="13">word2vec</text></g>
+        <g class="phase"><circle cx="740" cy="120" r="36" fill="rgba(253,186,116,.22)" stroke="#fdba74"/><text x="740" y="125" text-anchor="middle" fill="#e5e7eb" font-size="13">Attention</text></g>
+        <g class="phase"><rect x="900" y="90" width="170" height="40" rx="10" fill="rgba(252,165,165,.22)" stroke="#fca5a5"/><text x="985" y="115" text-anchor="middle" fill="#e5e7eb" font-size="13">Transformers → ChatGPT</text></g>
+      </svg>
+      <div class="ticker"><div class="tickbar"></div></div>
+    </div>
+    <div class="card"><strong>Next topic:</strong> <em>Inside a Language Model</em> — tokens, embeddings, attention heads, and layers working together.</div>
+  </section>
+
+  <section class="slide" data-slide="4">
+    <h1>Quick check</h1>
+    <p>Why was <em>Attention</em> considered a breakthrough for Language AI?</p>
+    <div class="grid" style="margin-top:.6rem">
+      <div class="card"><strong>A.</strong> It made models faster</div>
+      <div class="card"><strong>B.</strong> It helped models focus on context</div>
+      <div class="card"><strong>C.</strong> It reduced data size</div>
+    </div>
+    <p class="muted" style="margin-top:.4rem;">(No reveal here — you’ll share the answer.)</p>
+  </section>
+
+  <div class="progress"><div class="bar" id="bar"></div></div>
+  <div class="nav" aria-label="Slide controls">
+    <button id="prevBtn" title="Previous">◀</button>
+    <button id="nextBtn" title="Next">▶</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const bar = document.getElementById('bar');
+  const counter = document.getElementById('counter');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const fsBtn  = document.getElementById('fsBtn');
+  let index = 0;
+  function show(i){
+    index = Math.max(0, Math.min(i, slides.length-1));
+    slides.forEach((s,idx)=>s.classList.toggle('active', idx===index));
+    bar.style.width = ((index+1)/slides.length*100)+'%';
+    counter.textContent = (index+1) + ' / ' + slides.length;
+    const params = new URLSearchParams(); params.set('slide', index+1); location.hash = '#' + params.toString();
+  }
+  function next(){ show(index+1); }
+  function prev(){ show(index-1); }
+  document.addEventListener('click', (e)=>{
+    const tag = e.target.tagName.toLowerCase();
+    if(['button','a','input','label','select','textarea'].includes(tag) || e.target.closest('.term')) return;
+    next();
+  });
+  window.addEventListener('keydown', (e)=>{
+    if(e.key==='ArrowRight' || e.key==='PageDown' || e.key===' '){ e.preventDefault(); next(); }
+    if(e.key==='ArrowLeft'  || e.key==='PageUp'   || e.key==='Backspace'){ e.preventDefault(); prev(); }
+    if(e.key.toLowerCase()==='f'){ toggleFS(); }
+  });
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+  function initFromHash(){
+    const n = parseInt(new URLSearchParams(location.hash.replace('#','')).get('slide')||'1',10);
+    show(isNaN(n)?0:n-1);
+  }
+  window.addEventListener('hashchange', initFromHash);
+  initFromHash();
+  function makePopover(el){
+    const text = el.getAttribute('data-definition'); if(!text) return;
+    let pop = document.createElement('div'); pop.className='popover'; pop.innerHTML = text; el.appendChild(pop);
+    pop.style.left='0px'; pop.style.top='1.6em'; requestAnimationFrame(()=>pop.classList.add('visible'));
+    function close(ev){ if(!pop.contains(ev.target) && ev.target!==el){ pop.remove(); cleanup(); } }
+    function esc(ev){ if(ev.key==='Escape'){ pop.remove(); cleanup(); } }
+    function cleanup(){ document.removeEventListener('click', close); window.removeEventListener('keydown', esc); }
+    document.addEventListener('click', close); window.addEventListener('keydown', esc);
+  }
+  function togglePopover(e){
+    const el = e.currentTarget; const existing = el.querySelector('.popover');
+    if(existing){ existing.remove(); return; } makePopover(el);
+  }
+  document.querySelectorAll('.term').forEach(el=>{
+    el.addEventListener('click', togglePopover);
+    el.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); togglePopover(e); } });
+  });
+  function toggleFS(){
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen?.(); }
+    else { document.exitFullscreen?.(); }
+  }
+  fsBtn.addEventListener('click', toggleFS);
+})();
+</script>
+</body>
+</html>
