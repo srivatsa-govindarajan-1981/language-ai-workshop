@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History of Language AI</title>
+
+  <!-- Poppins font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
+
+  <style>
+    :root {
+      --ink: #e6edf3;
+      --muted: #b8c4cf;
+      --focus: #ffd080;
+      --bg1: #0e1a2b;
+      --bg2: #0b1726;
+      --bg3: #0a1522;
+    }
+    body { margin:0; background: radial-gradient(1200px 800px at 12% 12%, var(--bg1), var(--bg2) 60%), linear-gradient(120deg, var(--bg2) 0%, var(--bg3) 50%, var(--bg2) 100%); }
+    body::before {
+      content:""; position:fixed; inset:-40%;
+      background: conic-gradient(from 0deg, #0b1a2a, #0f3c5a, #0b1a2a, #0e2a42, #0b1a2a);
+      filter: blur(160px) opacity(.10);
+      animation: swirl 28s linear infinite;
+      z-index:-1;
+    }
+    @keyframes swirl { to { transform: rotate(360deg); } }
+    .reveal { font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--ink); }
+    .lead { font-size: 1.15rem; line-height: 1.5; }
+    .pillline { display:inline-block; padding:.55rem .85rem; border-radius:999px; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); }
+    .fragment.emerge { transition: transform .5s, opacity .5s; transform: translateY(10px); }
+    .fragment.emerge.visible { transform:none; }
+    .content-shift { margin-left: 3.5ch; }
+    .svgwrap { display:flex; justify-content:center; }
+    .title { font-size: 2.2rem; font-weight: 600; letter-spacing: 0.3px; margin: 0 0 1rem 0; }
+  </style>
+</head>
+<body>
+<div class="reveal" role="region" aria-label="History of Language AI slide">
+  <div class="slides">
+
+    <section data-transition="fade" aria-label="History of Language AI">
+      <div class="content-shift">
+        <h1 class="title">History of Language AI</h1>
+
+        <div class="lead">
+          <p class="fragment emerge pillline"><strong>AI</strong>: the science and engineering of making intelligent machines—especially computer programs.</p>
+          <p class="fragment emerge pillline"><strong>Language AI</strong>: a branch of AI that can understand, process, and generate human language.</p>
+          <p class="fragment emerge" style="margin-top:1rem;"><em>Language AI pre-dates ChatGPT — here’s a timeline:</em></p>
+        </div>
+
+        <div class="fragment emerge svgwrap" aria-label="Timeline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+<title id="title">History of Language AI — evenly spaced milestones</title>
+<desc id="desc">Milestone years are equally spaced from 2000 to 2023, with rounded labels for key models.</desc>
+
+  <defs>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b2a40"/>
+      <stop offset="100%" stop-color="#152538"/>
+    </linearGradient>
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style><![CDATA[
+      .axis { stroke: #8a97a5; stroke-width: 2.5; }
+      .tick { stroke: #7a8794; stroke-width: 1.2; }
+      .label-dark { font: 600 16px Poppins, sans-serif; fill: #0f1a2b; }
+      .small { font: 600 13px Poppins, sans-serif; fill: #eaf2f8; opacity:.98; }
+      .legend { font: 700 13px Poppins, sans-serif; fill: #ffffff; stroke: rgba(15,26,43,.6); stroke-width: .6px; paint-order: stroke fill; }
+      .bubble { filter: url(#softglow); paint-order: stroke; stroke: rgba(0,0,0,.22); stroke-width:1; }
+      .grid { stroke: rgba(255,255,255,.06); stroke-width: 1; }
+    ]]></style>
+  </defs>
+  <rect x="50" y="70" width="1140" height="430" rx="16" ry="16" fill="url(#panelGrad)" opacity=".98"/>
+
+<line class="axis" x1="90" y1="400" x2="1150" y2="400"/>
+<line class="tick" x1="90.0" y1="393" x2="90.0" y2="407"/>
+<line class="grid" x1="90.0" y1="180" x2="90.0" y2="410"/>
+<text class="small" x="90.0" y="428" text-anchor="middle">2000</text>
+<line class="tick" x1="207.77777777777777" y1="393" x2="207.77777777777777" y2="407"/>
+<line class="grid" x1="207.77777777777777" y1="180" x2="207.77777777777777" y2="410"/>
+<text class="small" x="207.77777777777777" y="428" text-anchor="middle">2010</text>
+<line class="tick" x1="325.55555555555554" y1="393" x2="325.55555555555554" y2="407"/>
+<line class="grid" x1="325.55555555555554" y1="180" x2="325.55555555555554" y2="410"/>
+<text class="small" x="325.55555555555554" y="428" text-anchor="middle">2013</text>
+<line class="tick" x1="443.3333333333333" y1="393" x2="443.3333333333333" y2="407"/>
+<line class="grid" x1="443.3333333333333" y1="180" x2="443.3333333333333" y2="410"/>
+<text class="small" x="443.3333333333333" y="428" text-anchor="middle">2017</text>
+<line class="tick" x1="561.1111111111111" y1="393" x2="561.1111111111111" y2="407"/>
+<line class="grid" x1="561.1111111111111" y1="180" x2="561.1111111111111" y2="410"/>
+<text class="small" x="561.1111111111111" y="428" text-anchor="middle">2018</text>
+<line class="tick" x1="678.8888888888889" y1="393" x2="678.8888888888889" y2="407"/>
+<line class="grid" x1="678.8888888888889" y1="180" x2="678.8888888888889" y2="410"/>
+<text class="small" x="678.8888888888889" y="428" text-anchor="middle">2019</text>
+<line class="tick" x1="796.6666666666666" y1="393" x2="796.6666666666666" y2="407"/>
+<line class="grid" x1="796.6666666666666" y1="180" x2="796.6666666666666" y2="410"/>
+<text class="small" x="796.6666666666666" y="428" text-anchor="middle">2020</text>
+<line class="tick" x1="914.4444444444443" y1="393" x2="914.4444444444443" y2="407"/>
+<line class="grid" x1="914.4444444444443" y1="180" x2="914.4444444444443" y2="410"/>
+<text class="small" x="914.4444444444443" y="428" text-anchor="middle">2021</text>
+<line class="tick" x1="1032.2222222222222" y1="393" x2="1032.2222222222222" y2="407"/>
+<line class="grid" x1="1032.2222222222222" y1="180" x2="1032.2222222222222" y2="410"/>
+<text class="small" x="1032.2222222222222" y="428" text-anchor="middle">2022</text>
+<line class="tick" x1="1150.0" y1="393" x2="1150.0" y2="407"/>
+<line class="grid" x1="1150.0" y1="180" x2="1150.0" y2="410"/>
+<text class="small" x="1150.0" y="428" text-anchor="middle">2023</text>
+<line x1="90.0" y1="400" x2="90.0" y2="290" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(29.0,252)"><rect class="bubble" width="122" height="38" rx="10" ry="10" fill="#D9D9DE" opacity=".97"/><text class="label-dark" x="61.0" y="24.0" text-anchor="middle">Bag-of-words</text></g>
+<line x1="325.55555555555554" y1="400" x2="325.55555555555554" y2="250" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(277.55555555555554,212)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#D9D9DE" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">word2vec</text></g>
+<line x1="443.3333333333333" y1="400" x2="443.3333333333333" y2="290" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(394.3333333333333,252)"><rect class="bubble" width="98" height="38" rx="10" ry="10" fill="#D9D9DE" opacity=".97"/><text class="label-dark" x="49.0" y="24.0" text-anchor="middle">Attention</text></g>
+<line x1="561.1111111111111" y1="400" x2="561.1111111111111" y2="270" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(513.1111111111111,232)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#C8A6E6" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">BERT</text></g>
+<line x1="561.1111111111111" y1="400" x2="561.1111111111111" y2="340" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(513.1111111111111,302)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#EBA3A3" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">GPT</text></g>
+<line x1="678.8888888888889" y1="400" x2="678.8888888888889" y2="310" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(630.8888888888889,272)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#EBA3A3" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">GPT-2</text></g>
+<line x1="678.8888888888889" y1="400" x2="678.8888888888889" y2="230" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(625.8888888888889,192)"><rect class="bubble" width="106" height="38" rx="10" ry="10" fill="#C8A6E6" opacity=".97"/><text class="label-dark" x="53.0" y="24.0" text-anchor="middle">DistilBERT</text></g>
+<line x1="678.8888888888889" y1="400" x2="678.8888888888889" y2="260" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(630.8888888888889,222)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#C8A6E6" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">RoBERTa</text></g>
+<line x1="678.8888888888889" y1="400" x2="678.8888888888889" y2="370" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(630.8888888888889,332)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#A8DCC2" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">T5</text></g>
+<line x1="796.6666666666666" y1="400" x2="796.6666666666666" y2="320" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(748.6666666666666,282)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#EBA3A3" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">GPT-3</text></g>
+<line x1="914.4444444444443" y1="400" x2="914.4444444444443" y2="360" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(866.4444444444443,322)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#A8DCC2" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">Switch</text></g>
+<line x1="1032.2222222222222" y1="400" x2="1032.2222222222222" y2="360" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(984.2222222222222,322)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#A8DCC2" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">Flan-T5</text></g>
+<line x1="1150.0" y1="400" x2="1150.0" y2="310" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(1102.0,272)"><rect class="bubble" width="96" height="38" rx="10" ry="10" fill="#EBA3A3" opacity=".97"/><text class="label-dark" x="48.0" y="24.0" text-anchor="middle">ChatGPT</text></g>
+<g aria-label="Legend">
+<rect x="820" y="86" width="18" height="18" rx="4" ry="4" fill="#EBA3A3" class="bubble" opacity=".97"/>
+<text class="legend" x="848" y="100">Decoder-only</text>
+<rect x="820" y="116" width="18" height="18" rx="4" ry="4" fill="#C8A6E6" class="bubble" opacity=".97"/>
+<text class="legend" x="848" y="130">Encoder-only</text>
+<rect x="820" y="146" width="18" height="18" rx="4" ry="4" fill="#A8DCC2" class="bubble" opacity=".97"/>
+<text class="legend" x="848" y="160">Encoder-decoder</text>
+<rect x="820" y="176" width="18" height="18" rx="4" ry="4" fill="#D9D9DE" class="bubble" opacity=".97"/>
+<text class="legend" x="848" y="190">Non-transformer</text>
+</g>
+<text class="small" x="600.0" y="516" text-anchor="middle" fill="#f1f6fb">Milestone years are evenly spaced; 2018–2023 each has equal separation.</text>
+</svg>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    controls: true,
+    progress: true,
+    center: true,
+    slideNumber: 'c/t',
+    width: 1280,
+    height: 720,
+    transition: 'fade',
+    fragments: true,
+    keyboard: true,
+    touch: true
+  });
+</script>
+</body>
+</html>
