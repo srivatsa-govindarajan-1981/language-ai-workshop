@@ -270,9 +270,8 @@
 <section data-transition="fade" aria-label="How can a computer understand human language?">
   <div class="content-shift">
     <h2 class="title-h2">How can a computer understand Human language?</h2>
-    <div class="fragment emerge" aria-label="Bag-of-words visual">
-      <svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420" role="img" aria-labelledby="title desc" style="max-width:100%;height:auto;border-radius:16px;">
-<title id="title">Bag-of-words illustration</title>
+    <div class="fragment emerge" aria-label="Bag-of-words visual"><svg xmlns="http://www.w3.org/2000/svg" width="1120" height="440" viewBox="0 0 1120 440" role="img" aria-labelledby="title desc" style="max-width:100%;height:auto;border-radius:16px;">
+<title id="title">Bag-of-words illustration with vector representation</title>
 <desc id="desc">Tokenization of the sentence “My cat is cute” and a bag-of-words vector showing word counts.</desc>
 
     <defs>
@@ -281,64 +280,76 @@
         <stop offset="100%" stop-color="#0f1c2d"/>
       </linearGradient>
       <style><![CDATA[
-        .lab { font: 600 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #e6edf3; }
-        .boxtext { font: 600 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #0f1a2b; }
-        .small { font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #dfe7ee; }
+        .lab { font: 700 14px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; fill: #e6edf3; }
+        .boxtext { font: 600 16px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; fill: #0f1a2b; }
+        .small { font: 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; fill: #dfe7ee; }
         .card { stroke: #09131f; stroke-width: 2; }
       ]]></style>
     </defs>
     
-<rect x="12" y="12" width="956" height="396" rx="14" ry="14" fill="url(#bowPanel)"/>
+<rect x="12" y="12" width="1096" height="416" rx="14" ry="14" fill="url(#bowPanel)"/>
 <text class="lab" x="40" y="48">Input</text>
-<rect x="40" y="60" width="280" height="46" rx="10" ry="10" fill="#d9dde3" class="card" />
+<rect x="40" y="60" width="300" height="46" rx="10" ry="10" fill="#d9dde3" class="card" />
 <text class="boxtext" x="56" y="90">My cat is cute</text>
-<text class="lab" x="360" y="90">Tokenization</text>
-<text class="small" x="360" y="110">Split input by a whitespace</text>
-<rect x="40" y="130" width="80" height="54" rx="10" ry="10" fill="#7fa7c6" class="card"/>
-<text class="boxtext" x="66" y="164">my</text>
-<line x1="80.0" y1="184" x2="80.0" y2="206" stroke="#94a3b8" stroke-width="2"/>
-<rect x="132" y="130" width="80" height="54" rx="10" ry="10" fill="#7fa7c6" class="card"/>
-<text class="boxtext" x="158" y="164">cat</text>
-<line x1="172.0" y1="184" x2="172.0" y2="206" stroke="#94a3b8" stroke-width="2"/>
-<rect x="224" y="130" width="80" height="54" rx="10" ry="10" fill="#7fa7c6" class="card"/>
-<text class="boxtext" x="250" y="164">is</text>
-<line x1="264.0" y1="184" x2="264.0" y2="206" stroke="#94a3b8" stroke-width="2"/>
-<rect x="316" y="130" width="80" height="54" rx="10" ry="10" fill="#7fa7c6" class="card"/>
-<text class="boxtext" x="342" y="164">cute</text>
-<line x1="356.0" y1="184" x2="356.0" y2="206" stroke="#94a3b8" stroke-width="2"/>
-<rect x="40" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
-<rect x="40" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
-<text class="boxtext" x="58" y="248">that</text>
-<text class="boxtext" x="78.0" y="272" fill="#9fb1c4">0</text>
-<rect x="132" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
-<rect x="132" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
-<text class="boxtext" x="150" y="248">is</text>
-<text class="boxtext" x="170.0" y="272" fill="#d44b4b">1</text>
-<rect x="224" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
-<rect x="224" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
-<text class="boxtext" x="242" y="248">a</text>
-<text class="boxtext" x="262.0" y="272" fill="#9fb1c4">0</text>
-<rect x="316" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
-<rect x="316" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
-<text class="boxtext" x="334" y="248">cute</text>
-<text class="boxtext" x="354.0" y="272" fill="#d44b4b">1</text>
-<rect x="408" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
-<rect x="408" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
-<text class="boxtext" x="426" y="248">dog</text>
-<text class="boxtext" x="446.0" y="272" fill="#9fb1c4">0</text>
-<rect x="500" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
-<rect x="500" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
-<text class="boxtext" x="518" y="248">my</text>
-<text class="boxtext" x="538.0" y="272" fill="#d44b4b">1</text>
-<rect x="592" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
-<rect x="592" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
-<text class="boxtext" x="610" y="248">cat</text>
-<text class="boxtext" x="630.0" y="272" fill="#d44b4b">1</text>
-<text class="lab" x="408" y="208">Bag-of-words</text>
-<text class="small" x="408" y="226">Count individual words</text>
-</svg>
-    </div>
-    <p class="fragment emerge pillline" style="margin-top:1rem;">
+<text class="lab" x="370" y="90">Tokenization</text>
+<text class="small" x="370" y="110">Split input by a whitespace</text>
+<rect x="40" y="130" width="86" height="56" rx="10" ry="10" fill="#7fa7c6" class="card"/>
+<text class="boxtext" x="68" y="165">my</text>
+<line x1="83.0" y1="186" x2="83.0" y2="208" stroke="#94a3b8" stroke-width="2"/>
+<rect x="138" y="130" width="86" height="56" rx="10" ry="10" fill="#7fa7c6" class="card"/>
+<text class="boxtext" x="166" y="165">cat</text>
+<line x1="181.0" y1="186" x2="181.0" y2="208" stroke="#94a3b8" stroke-width="2"/>
+<rect x="236" y="130" width="86" height="56" rx="10" ry="10" fill="#7fa7c6" class="card"/>
+<text class="boxtext" x="264" y="165">is</text>
+<line x1="279.0" y1="186" x2="279.0" y2="208" stroke="#94a3b8" stroke-width="2"/>
+<rect x="334" y="130" width="86" height="56" rx="10" ry="10" fill="#7fa7c6" class="card"/>
+<text class="boxtext" x="362" y="165">cute</text>
+<line x1="377.0" y1="186" x2="377.0" y2="208" stroke="#94a3b8" stroke-width="2"/>
+<rect x="40" y="224" width="86" height="60" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="40" y="260" width="86" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="60" y="252">that</text>
+<text class="boxtext" x="79.0" y="278" fill="#9fb1c4">0</text>
+<rect x="134" y="224" width="86" height="60" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="134" y="260" width="86" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="154" y="252">is</text>
+<text class="boxtext" x="173.0" y="278" fill="#d44b4b">1</text>
+<rect x="228" y="224" width="86" height="60" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="228" y="260" width="86" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="248" y="252">a</text>
+<text class="boxtext" x="267.0" y="278" fill="#9fb1c4">0</text>
+<rect x="322" y="224" width="86" height="60" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="322" y="260" width="86" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="342" y="252">cute</text>
+<text class="boxtext" x="361.0" y="278" fill="#d44b4b">1</text>
+<rect x="416" y="224" width="86" height="60" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="416" y="260" width="86" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="436" y="252">dog</text>
+<text class="boxtext" x="455.0" y="278" fill="#9fb1c4">0</text>
+<rect x="510" y="224" width="86" height="60" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="510" y="260" width="86" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="530" y="252">my</text>
+<text class="boxtext" x="549.0" y="278" fill="#d44b4b">1</text>
+<rect x="604" y="224" width="86" height="60" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="604" y="260" width="86" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="624" y="252">cat</text>
+<text class="boxtext" x="643.0" y="278" fill="#d44b4b">1</text>
+<text class="lab" x="718" y="212">Bag-of-words</text>
+<text class="small" x="718" y="230">Count individual words</text>
+<rect x="858" y="232" width="22" height="22" rx="4" ry="4" fill="#f1b4b4" class="card" style="stroke-width:1;"/>
+<rect x="886" y="232" width="22" height="22" rx="4" ry="4" fill="#f1b4b4" class="card" style="stroke-width:1;"/>
+<rect x="914" y="232" width="22" height="22" rx="4" ry="4" fill="#f1b4b4" class="card" style="stroke-width:1;"/>
+<rect x="942" y="232" width="22" height="22" rx="4" ry="4" fill="#f1b4b4" class="card" style="stroke-width:1;"/>
+<rect x="970" y="232" width="22" height="22" rx="4" ry="4" fill="#f1b4b4" class="card" style="stroke-width:1;"/>
+<rect x="998" y="232" width="22" height="22" rx="4" ry="4" fill="#f1b4b4" class="card" style="stroke-width:1;"/>
+<rect x="1026" y="232" width="22" height="22" rx="4" ry="4" fill="#f1b4b4" class="card" style="stroke-width:1;"/>
+<rect x="1054" y="232" width="22" height="22" rx="4" ry="4" fill="#f1b4b4" class="card" style="stroke-width:1;"/>
+<rect x="886" y="232" width="22" height="22" rx="4" ry="4" fill="#d44b4b" class="card" style="stroke-width:1;"/>
+<rect x="942" y="232" width="22" height="22" rx="4" ry="4" fill="#d44b4b" class="card" style="stroke-width:1;"/>
+<rect x="998" y="232" width="22" height="22" rx="4" ry="4" fill="#d44b4b" class="card" style="stroke-width:1;"/>
+<rect x="1026" y="232" width="22" height="22" rx="4" ry="4" fill="#d44b4b" class="card" style="stroke-width:1;"/>
+<text class="lab" x="858" y="276">Vector representation</text>
+</svg></div>
+    <p class="fragment emerge pillline" style="margin-top:1rem;font-size:1rem;line-height:1.4;">
       <strong>Limitation:</strong> It considers language to be nothing more than an almost literal bag of words and ignores the semantic nature, or meaning, of text.
     </p>
   </div>
