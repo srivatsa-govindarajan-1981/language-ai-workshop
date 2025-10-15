@@ -1,0 +1,403 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Language AI — History of Language AI</title>
+  <style>
+    :root {
+      --bg1: #0e1a2b;
+      --bg2: #0b1726;
+      --bg3: #0a1522;
+      --ink: #e6edf3;
+      --ink-warm: #f5f5f7;
+      --focus: #ffd080;
+      --pill-bg: rgba(255,255,255,.06);
+      --pill-brd: rgba(255,255,255,.10);
+    }
+    html, body { height:100%; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1200px 800px at 12% 12%, var(--bg1), var(--bg2) 60%),
+        linear-gradient(120deg, var(--bg2) 0%, var(--bg3) 50%, var(--bg2) 100%);
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: -40%;
+      background: conic-gradient(from 0deg, #0b1a2a, #0f3c5a, #0b1a2a, #0e2a42, #0b1a2a);
+      filter: blur(160px) opacity(.10);
+      animation: swirl 28s linear infinite;
+      z-index: -1;
+    }
+    @keyframes swirl { to { transform: rotate(360deg); } }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
+  <style>
+    .reveal {
+      font-family:
+        "SF Pro Display",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .title-h1 {
+      font-weight: 600;
+      font-size: 2.8rem;
+      line-height: 1.1;
+      letter-spacing: 0.025em;
+      text-transform: none;
+      color: var(--ink-warm);
+      margin: 0 0 1rem 0;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeup 0.8s ease forwards;
+    }
+    @keyframes fadeup { to { opacity: 1; transform: none; } }
+
+    .lead { font-size: 1.15rem; line-height: 1.5; }
+    .pillline { display:inline-block; padding:.55rem .85rem; border-radius:999px; background: var(--pill-bg); border:1px solid var(--pill-brd); }
+    .fragment.emerge { transition: transform .5s, opacity .5s; transform: translateY(10px); }
+    .fragment.emerge.visible { transform:none; }
+    .content-shift { margin-left: 3.5ch; }
+    .svgwrap { display:flex; justify-content:center; }
+    .reveal .progress span { background: var(--focus); }
+    .reveal .slide-number { background: rgba(2,6,23,.45); color: var(--ink); border-radius: 6px; padding:.3rem .5rem; }
+  </style>
+<style>
+/* Floating fullscreen control */
+.fs-btn {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .55rem .8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(0,0,0,.35);
+  color: #f5f5f7;
+  font: 600 14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.fs-btn:focus-visible { outline: 3px solid #ffd080; outline-offset: 3px; }
+.fs-btn[hidden] { display: none; }
+</style>
+<style>
+/* Apple-style section title (H2) */
+.title-h2 {
+  font-weight: 600;
+  font-size: 2.0rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #e8ebee;
+  margin: 0 0 .8rem 0;
+}
+</style>
+</head>
+<body>
+
+<button class="fs-btn" id="fsToggle" aria-label="Enter full screen" title="Enter full screen">
+  <span>📺 Full Screen</span>
+</button>
+
+
+<div class="reveal" role="region" aria-label="History of Language AI slide">
+  <div class="slides">
+
+    <section data-transition="fade" aria-label="History of Language AI">
+      <div class="content-shift">
+        <h1 class="title-h1">History of Language AI</h1>
+        <div class="lead">
+          <p class="fragment emerge pillline"><strong>AI</strong>: the science and engineering of making intelligent machines—especially computer programs.</p>
+          <p class="fragment emerge pillline"><strong>Language AI</strong>: a branch of AI that can understand, process, and generate human language.</p>
+          <p class="fragment emerge" style="margin-top:1rem;"><em>Language AI pre-dates ChatGPT — here’s a timeline:</em></p>
+        </div>
+        <div class="fragment emerge svgwrap" aria-label="Timeline">
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="621" viewBox="0 0 1380 621" role="img" aria-labelledby="title desc" style="max-width:100%;height:auto;border-radius:16px;">
+<title id="title">History of Language AI — evenly spaced milestones</title>
+<desc id="desc">Milestone years equally spaced (2000–2023) with rounded labels for key models.</desc>
+
+    <defs>
+      <linearGradient id="panelGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#1b2a40"/>
+        <stop offset="100%" stop-color="#152538"/>
+      </linearGradient>
+      <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="1.8" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <style><![CDATA[
+        .axis { stroke: #8a97a5; stroke-width: 2.8; }
+        .tick { stroke: #7a8794; stroke-width: 1.4; }
+        .label-dark { font: 600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #0f1a2b; }
+        .small { font: 700 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #eaf2f8; opacity:.98; }
+        .legend { font: 700 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #ffffff; stroke: rgba(15,26,43,.65); stroke-width: .7px; paint-order: stroke fill; }
+        .bubble { filter: url(#softglow); paint-order: stroke; stroke: rgba(0,0,0,.22); stroke-width:1; }
+        .grid { stroke: rgba(255,255,255,.06); stroke-width: 1; }
+      ]]></style>
+    </defs>
+    
+<rect x="57" y="80" width="1312" height="495" rx="16" ry="16" fill="url(#panelGrad)" opacity=".98"/>
+<line class="axis" x1="103" y1="459" x2="1323" y2="459"/>
+<line class="tick" x1="103.0" y1="450" x2="103.0" y2="468"/>
+<line class="grid" x1="103.0" y1="199" x2="103.0" y2="471"/>
+<text class="small" x="103.0" y="491" text-anchor="middle">2000</text>
+<line class="tick" x1="238.55555555555554" y1="450" x2="238.55555555555554" y2="468"/>
+<line class="grid" x1="238.55555555555554" y1="199" x2="238.55555555555554" y2="471"/>
+<text class="small" x="238.55555555555554" y="491" text-anchor="middle">2010</text>
+<line class="tick" x1="374.1111111111111" y1="450" x2="374.1111111111111" y2="468"/>
+<line class="grid" x1="374.1111111111111" y1="199" x2="374.1111111111111" y2="471"/>
+<text class="small" x="374.1111111111111" y="491" text-anchor="middle">2013</text>
+<line class="tick" x1="509.66666666666663" y1="450" x2="509.66666666666663" y2="468"/>
+<line class="grid" x1="509.66666666666663" y1="199" x2="509.66666666666663" y2="471"/>
+<text class="small" x="509.66666666666663" y="491" text-anchor="middle">2017</text>
+<line class="tick" x1="645.2222222222222" y1="450" x2="645.2222222222222" y2="468"/>
+<line class="grid" x1="645.2222222222222" y1="199" x2="645.2222222222222" y2="471"/>
+<text class="small" x="645.2222222222222" y="491" text-anchor="middle">2018</text>
+<line class="tick" x1="780.7777777777777" y1="450" x2="780.7777777777777" y2="468"/>
+<line class="grid" x1="780.7777777777777" y1="199" x2="780.7777777777777" y2="471"/>
+<text class="small" x="780.7777777777777" y="491" text-anchor="middle">2019</text>
+<line class="tick" x1="916.3333333333333" y1="450" x2="916.3333333333333" y2="468"/>
+<line class="grid" x1="916.3333333333333" y1="199" x2="916.3333333333333" y2="471"/>
+<text class="small" x="916.3333333333333" y="491" text-anchor="middle">2020</text>
+<line class="tick" x1="1051.8888888888887" y1="450" x2="1051.8888888888887" y2="468"/>
+<line class="grid" x1="1051.8888888888887" y1="199" x2="1051.8888888888887" y2="471"/>
+<text class="small" x="1051.8888888888887" y="491" text-anchor="middle">2021</text>
+<line class="tick" x1="1187.4444444444443" y1="450" x2="1187.4444444444443" y2="468"/>
+<line class="grid" x1="1187.4444444444443" y1="199" x2="1187.4444444444443" y2="471"/>
+<text class="small" x="1187.4444444444443" y="491" text-anchor="middle">2022</text>
+<line class="tick" x1="1323.0" y1="450" x2="1323.0" y2="468"/>
+<line class="grid" x1="1323.0" y1="199" x2="1323.0" y2="471"/>
+<text class="small" x="1323.0" y="491" text-anchor="middle">2023</text>
+<line x1="103.0" y1="459" x2="103.0" y2="333" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(35.0,289)">
+      <rect class="bubble" width="136" height="44" rx="12" ry="12" fill="#D9D9DE" opacity=".97"/>
+      <text class="label-dark" x="68.0" y="28.0" text-anchor="middle">Bag-of-words</text>
+    </g>
+<line x1="374.1111111111111" y1="459" x2="374.1111111111111" y2="287" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(319.1111111111111,243)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#D9D9DE" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">word2vec</text>
+    </g>
+<line x1="509.66666666666663" y1="459" x2="509.66666666666663" y2="333" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(454.66666666666663,289)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#D9D9DE" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">Attention</text>
+    </g>
+<line x1="645.2222222222222" y1="459" x2="645.2222222222222" y2="310" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(590.2222222222222,266)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#C8A6E6" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">BERT</text>
+    </g>
+<line x1="645.2222222222222" y1="459" x2="645.2222222222222" y2="390" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(590.2222222222222,346)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#EBA3A3" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">GPT</text>
+    </g>
+<line x1="780.7777777777777" y1="459" x2="780.7777777777777" y2="356" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(725.7777777777777,312)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#EBA3A3" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">GPT-2</text>
+    </g>
+<line x1="780.7777777777777" y1="459" x2="780.7777777777777" y2="264" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(721.7777777777777,220)">
+      <rect class="bubble" width="118" height="44" rx="12" ry="12" fill="#C8A6E6" opacity=".97"/>
+      <text class="label-dark" x="59.0" y="28.0" text-anchor="middle">DistilBERT</text>
+    </g>
+<line x1="780.7777777777777" y1="459" x2="780.7777777777777" y2="298" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(725.7777777777777,254)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#C8A6E6" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">RoBERTa</text>
+    </g>
+<line x1="780.7777777777777" y1="459" x2="780.7777777777777" y2="425" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(725.7777777777777,381)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#A8DCC2" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">T5</text>
+    </g>
+<line x1="916.3333333333333" y1="459" x2="916.3333333333333" y2="367" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(861.3333333333333,323)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#EBA3A3" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">GPT-3</text>
+    </g>
+<line x1="1051.8888888888887" y1="459" x2="1051.8888888888887" y2="413" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(996.8888888888887,369)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#A8DCC2" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">Switch</text>
+    </g>
+<line x1="1187.4444444444443" y1="459" x2="1187.4444444444443" y2="413" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(1132.4444444444443,369)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#A8DCC2" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">Flan-T5</text>
+    </g>
+<line x1="1323.0" y1="459" x2="1323.0" y2="356" stroke="#8a97a5" stroke-width="2"/>
+<g transform="translate(1268.0,312)">
+      <rect class="bubble" width="110" height="44" rx="12" ry="12" fill="#EBA3A3" opacity=".97"/>
+      <text class="label-dark" x="55.0" y="28.0" text-anchor="middle">ChatGPT</text>
+    </g>
+<g aria-label="Legend">
+<rect x="944" y="98" width="20" height="20" rx="5" ry="5" fill="#EBA3A3" class="bubble" opacity=".97"/>
+<text class="legend" x="974" y="114">Decoder-only</text>
+<rect x="944" y="132" width="20" height="20" rx="5" ry="5" fill="#C8A6E6" class="bubble" opacity=".97"/>
+<text class="legend" x="974" y="148">Encoder-only</text>
+<rect x="944" y="166" width="20" height="20" rx="5" ry="5" fill="#A8DCC2" class="bubble" opacity=".97"/>
+<text class="legend" x="974" y="182">Encoder-decoder</text>
+<rect x="944" y="200" width="20" height="20" rx="5" ry="5" fill="#D9D9DE" class="bubble" opacity=".97"/>
+<text class="legend" x="974" y="216">Non-transformer</text>
+</g>
+</svg>
+        </div>
+      </div>
+    </section>
+
+  
+<section data-transition="fade" aria-label="How can a computer understand human language?">
+  <div class="content-shift">
+    <h2 class="title-h2">How can a computer understand Human language?</h2>
+    <div class="fragment emerge" aria-label="Bag-of-words visual">
+      <svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420" role="img" aria-labelledby="title desc" style="max-width:100%;height:auto;border-radius:16px;">
+<title id="title">Bag-of-words illustration</title>
+<desc id="desc">Tokenization of the sentence “My cat is cute” and a bag-of-words vector showing word counts.</desc>
+
+    <defs>
+      <linearGradient id="bowPanel" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#162338"/>
+        <stop offset="100%" stop-color="#0f1c2d"/>
+      </linearGradient>
+      <style><![CDATA[
+        .lab { font: 600 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #e6edf3; }
+        .boxtext { font: 600 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #0f1a2b; }
+        .small { font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #dfe7ee; }
+        .card { stroke: #09131f; stroke-width: 2; }
+      ]]></style>
+    </defs>
+    
+<rect x="12" y="12" width="956" height="396" rx="14" ry="14" fill="url(#bowPanel)"/>
+<text class="lab" x="40" y="48">Input</text>
+<rect x="40" y="60" width="280" height="46" rx="10" ry="10" fill="#d9dde3" class="card" />
+<text class="boxtext" x="56" y="90">My cat is cute</text>
+<text class="lab" x="360" y="90">Tokenization</text>
+<text class="small" x="360" y="110">Split input by a whitespace</text>
+<rect x="40" y="130" width="80" height="54" rx="10" ry="10" fill="#7fa7c6" class="card"/>
+<text class="boxtext" x="66" y="164">my</text>
+<line x1="80.0" y1="184" x2="80.0" y2="206" stroke="#94a3b8" stroke-width="2"/>
+<rect x="132" y="130" width="80" height="54" rx="10" ry="10" fill="#7fa7c6" class="card"/>
+<text class="boxtext" x="158" y="164">cat</text>
+<line x1="172.0" y1="184" x2="172.0" y2="206" stroke="#94a3b8" stroke-width="2"/>
+<rect x="224" y="130" width="80" height="54" rx="10" ry="10" fill="#7fa7c6" class="card"/>
+<text class="boxtext" x="250" y="164">is</text>
+<line x1="264.0" y1="184" x2="264.0" y2="206" stroke="#94a3b8" stroke-width="2"/>
+<rect x="316" y="130" width="80" height="54" rx="10" ry="10" fill="#7fa7c6" class="card"/>
+<text class="boxtext" x="342" y="164">cute</text>
+<line x1="356.0" y1="184" x2="356.0" y2="206" stroke="#94a3b8" stroke-width="2"/>
+<rect x="40" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="40" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="58" y="248">that</text>
+<text class="boxtext" x="78.0" y="272" fill="#9fb1c4">0</text>
+<rect x="132" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="132" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="150" y="248">is</text>
+<text class="boxtext" x="170.0" y="272" fill="#d44b4b">1</text>
+<rect x="224" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="224" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="242" y="248">a</text>
+<text class="boxtext" x="262.0" y="272" fill="#9fb1c4">0</text>
+<rect x="316" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="316" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="334" y="248">cute</text>
+<text class="boxtext" x="354.0" y="272" fill="#d44b4b">1</text>
+<rect x="408" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="408" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="426" y="248">dog</text>
+<text class="boxtext" x="446.0" y="272" fill="#9fb1c4">0</text>
+<rect x="500" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="500" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="518" y="248">my</text>
+<text class="boxtext" x="538.0" y="272" fill="#d44b4b">1</text>
+<rect x="592" y="220" width="84" height="58" rx="12" ry="12" fill="#f0e9c6" class="card"/>
+<rect x="592" y="254" width="84" height="24" rx="0" ry="0" fill="#ffffff" class="card" style="stroke-width:1;"/>
+<text class="boxtext" x="610" y="248">cat</text>
+<text class="boxtext" x="630.0" y="272" fill="#d44b4b">1</text>
+<text class="lab" x="408" y="208">Bag-of-words</text>
+<text class="small" x="408" y="226">Count individual words</text>
+</svg>
+    </div>
+    <p class="fragment emerge pillline" style="margin-top:1rem;">
+      <strong>Limitation:</strong> It considers language to be nothing more than an almost literal bag of words and ignores the semantic nature, or meaning, of text.
+    </p>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    controls: true,
+    progress: true,
+    center: true,
+    slideNumber: 'c/t',
+    width: 1280,
+    height: 720,
+    transition: 'fade',
+    fragments: true,
+    keyboard: true,
+    touch: true
+  });
+</script>
+
+<script>
+(function(){
+  const btn = document.getElementById('fsToggle');
+  if(!btn) return;
+
+  function isFS(){
+    return document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+  }
+  function enterFS(){
+    const el = document.documentElement;
+    const req = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+    if(req) req.call(el);
+  }
+  function exitFS(){
+    const exit = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+    if(exit) exit.call(document);
+  }
+  function update(){
+    btn.textContent = isFS() ? '⤢ Exit Full Screen' : '📺 Full Screen';
+    btn.setAttribute('aria-label', isFS() ? 'Exit full screen' : 'Enter full screen');
+    btn.title = isFS() ? 'Exit full screen' : 'Enter full screen';
+  }
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    if(isFS()) exitFS(); else enterFS();
+  });
+  document.addEventListener('fullscreenchange', update);
+  document.addEventListener('webkitfullscreenchange', update);
+  document.addEventListener('msfullscreenchange', update);
+
+  // In some browsers, F won't be bound if focus isn't in the deck; this ensures a visible control exists.
+  update();
+})();
+</script>
+
+</body>
+</html>
