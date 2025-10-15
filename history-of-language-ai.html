@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History of Language AI</title>
+
+  <!-- Poppins font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
+
+  <style>
+    :root {
+      --ink: #e6edf3;
+      --muted: #b3c0cc;
+      --focus: #ffd080;
+    }
+    body { margin:0; background: radial-gradient(1200px 800px at 12% 12%, #0b1220, #090f1a 60%), linear-gradient(120deg, #090f1a 0%, #070b12 50%, #090f1a 100%); }
+    body::before {
+      content:""; position:fixed; inset:-40%;
+      background: conic-gradient(from 0deg, #0b1a2a, #0f3c5a, #0b1a2a, #0e2a42, #0b1a2a);
+      filter: blur(160px) opacity(.10);
+      animation: swirl 28s linear infinite;
+      z-index:-1;
+    }
+    @keyframes swirl { to { transform: rotate(360deg); } }
+    .reveal { font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--ink); }
+    .lead { font-size: 1.15rem; line-height: 1.5; }
+    .pillline { display:inline-block; padding:.55rem .85rem; border-radius:999px; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); }
+    .fragment.emerge { transition: transform .5s, opacity .5s; transform: translateY(10px); }
+    .fragment.emerge.visible { transform:none; }
+    .content-shift { margin-left: 3.5ch; }
+    .svgwrap { display:flex; justify-content:center; }
+  </style>
+</head>
+<body>
+<div class="reveal" role="region" aria-label="History of Language AI slide">
+  <div class="slides">
+
+    <section data-transition="fade" aria-label="History of Language AI">
+      <div class="content-shift">
+        <h1 class="r-fit-text">History of Language AI</h1>
+
+        <div class="lead">
+          <p class="fragment emerge pillline"><strong>AI</strong>: the science and engineering of making intelligent machines—especially computer programs.</p>
+          <p class="fragment emerge pillline"><strong>Language AI</strong>: a branch of AI that can understand, process, and generate human language.</p>
+          <p class="fragment emerge" style="margin-top:1rem;"><em>Language AI pre-dates ChatGPT — here’s a timeline:</em></p>
+        </div>
+
+        <div class="fragment emerge svgwrap" aria-label="Timeline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+<title id="title">History of Language AI — skewed timeline emphasizing 2018–2023</title>
+<desc id="desc">Timeline of key models and ideas from 2000 to 2023. Right side expanded. Color coding: decoder-only (pink), encoder-only (purple), encoder-decoder (green), non-transformer (gray).</desc>
+
+  <defs>
+    <linearGradient id="bggrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#090f1a"/>
+      <stop offset="100%" stop-color="#070b12"/>
+    </linearGradient>
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style><![CDATA[
+      .axis { stroke: #7a8896; stroke-width: 2; }
+      .tick { stroke: #6b7783; stroke-width: 1; }
+      .label { font: 600 16px Poppins, sans-serif; fill: #0b1220; }
+      .small { font: 12px Poppins, sans-serif; fill: #142132; opacity:.95; }
+      .bubble { filter: url(#softglow); paint-order: stroke; stroke: rgba(0,0,0,.25); stroke-width:1; }
+    ]]></style>
+    <clipPath id="cardClip"><rect rx="10" ry="10" x="0" y="0" width="100%" height="100%"/></clipPath>
+  </defs>
+  <rect x="0" y="0" width="1200" height="520" fill="url(#bggrad)"/>
+
+<line class="axis" x1="80" y1="380" x2="1160" y2="380"/>
+<line class="tick" x1="80.0" y1="374" x2="80.0" y2="386"/>
+<text class="small" x="80.0" y="404" text-anchor="middle">2000</text>
+<line class="tick" x1="260.0" y1="374" x2="260.0" y2="386"/>
+<text class="small" x="260.0" y="404" text-anchor="middle">2010</text>
+<line class="tick" x1="431.0" y1="374" x2="431.0" y2="386"/>
+<text class="small" x="431.0" y="404" text-anchor="middle">2015</text>
+<line class="tick" x1="566.0" y1="374" x2="566.0" y2="386"/>
+<text class="small" x="566.0" y="404" text-anchor="middle">2018</text>
+<line class="tick" x1="684.8000000000001" y1="374" x2="684.8000000000001" y2="386"/>
+<text class="small" x="684.8000000000001" y="404" text-anchor="middle">2019</text>
+<line class="tick" x1="803.6" y1="374" x2="803.6" y2="386"/>
+<text class="small" x="803.6" y="404" text-anchor="middle">2020</text>
+<line class="tick" x1="922.4" y1="374" x2="922.4" y2="386"/>
+<text class="small" x="922.4" y="404" text-anchor="middle">2021</text>
+<line class="tick" x1="1041.2000000000003" y1="374" x2="1041.2000000000003" y2="386"/>
+<text class="small" x="1041.2000000000003" y="404" text-anchor="middle">2022</text>
+<line class="tick" x1="1160.0" y1="374" x2="1160.0" y2="386"/>
+<text class="small" x="1160.0" y="404" text-anchor="middle">2023</text>
+<line x1="80.0" y1="380" x2="80.0" y2="270" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(20.0,234)"><rect class="bubble" width="120" height="36" rx="10" ry="10" fill="#D9D9DE" opacity=".95"/><rect width="120" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="60.0" y="23.0" text-anchor="middle">Bag-of-words</text></g>
+<line x1="296.0" y1="380" x2="296.0" y2="230" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(251.0,194)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#D9D9DE" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">word2vec</text></g>
+<line x1="566.0" y1="380" x2="566.0" y2="270" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(518.0,234)"><rect class="bubble" width="96" height="36" rx="10" ry="10" fill="#D9D9DE" opacity=".95"/><rect width="96" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="48.0" y="23.0" text-anchor="middle">Attention</text></g>
+<line x1="566.0" y1="380" x2="566.0" y2="250" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(521.0,214)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#C8A6E6" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">BERT</text></g>
+<line x1="566.0" y1="380" x2="566.0" y2="320" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(521.0,284)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#EBA3A3" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">GPT</text></g>
+<line x1="684.8000000000001" y1="380" x2="684.8000000000001" y2="290" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(639.8000000000001,254)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#EBA3A3" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">GPT-2</text></g>
+<line x1="684.8000000000001" y1="380" x2="684.8000000000001" y2="210" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(632.8000000000001,174)"><rect class="bubble" width="104" height="36" rx="10" ry="10" fill="#C8A6E6" opacity=".95"/><rect width="104" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="52.0" y="23.0" text-anchor="middle">DistilBERT</text></g>
+<line x1="684.8000000000001" y1="380" x2="684.8000000000001" y2="240" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(639.8000000000001,204)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#C8A6E6" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">RoBERTa</text></g>
+<line x1="684.8000000000001" y1="380" x2="684.8000000000001" y2="350" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(639.8000000000001,314)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#A8DCC2" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">T5</text></g>
+<line x1="803.6" y1="380" x2="803.6" y2="300" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(758.6,264)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#EBA3A3" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">GPT-3</text></g>
+<line x1="922.4" y1="380" x2="922.4" y2="340" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(877.4,304)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#A8DCC2" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">Switch</text></g>
+<line x1="1041.2000000000003" y1="380" x2="1041.2000000000003" y2="340" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(996.2000000000003,304)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#A8DCC2" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">Flan-T5</text></g>
+<line x1="1160.0" y1="380" x2="1160.0" y2="290" stroke="#7a8896" stroke-width="2"/>
+<g transform="translate(1115.0,254)"><rect class="bubble" width="90" height="36" rx="10" ry="10" fill="#EBA3A3" opacity=".95"/><rect width="90" height="36" rx="10" ry="10" fill="rgba(255,255,255,.12)" clip-path="url(#cardClip)" opacity=".0"/><text class="label" x="45.0" y="23.0" text-anchor="middle">ChatGPT</text></g>
+<text class="small" x="600.0" y="500" text-anchor="middle" fill="#b3c0cc">Skewed scale for clarity; colors inspired by reference: pink, purple, green, grey.</text>
+<g aria-label="Legend">
+<rect x="820" y="66" width="18" height="18" rx="4" ry="4" fill="#EBA3A3" class="bubble" opacity=".95"/>
+<text class="small" x="848" y="80" fill="#e6edf3">Decoder-only</text>
+<rect x="820" y="94" width="18" height="18" rx="4" ry="4" fill="#C8A6E6" class="bubble" opacity=".95"/>
+<text class="small" x="848" y="108" fill="#e6edf3">Encoder-only</text>
+<rect x="820" y="122" width="18" height="18" rx="4" ry="4" fill="#A8DCC2" class="bubble" opacity=".95"/>
+<text class="small" x="848" y="136" fill="#e6edf3">Encoder-decoder</text>
+<rect x="820" y="150" width="18" height="18" rx="4" ry="4" fill="#D9D9DE" class="bubble" opacity=".95"/>
+<text class="small" x="848" y="164" fill="#e6edf3">Non-transformer</text>
+</g>
+</svg>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    controls: true,
+    progress: true,
+    center: true,
+    slideNumber: 'c/t',
+    width: 1280,
+    height: 720,
+    transition: 'fade',
+    fragments: true,
+    keyboard: true,
+    touch: true
+  });
+</script>
+</body>
+</html>
